@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- 引入 echarts.js -->
+    <script src="./js/echarts.min.js"></script>
+  </head>
+  <header></header>
+  <section></section>
+  <body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px; height: 400px"></div>
+    <script type="text/javascript">
+      // 读取数据
+      let address = 54406
+      let header = document.querySelector('header')
+      let section = document.querySelector('section')
+      let requestURL = 'datas/weather/' + address + '.json' //把address传入，修改地址
+      let request = new XMLHttpRequest()
+
+      request.open('GET', requestURL)
+      request.responseType = 'text'
+      request.send()
+
+      request.onload = function () {
+        let weatherDataText = request.response
+        let weatherData = JSON.parse(weatherDataText)
+        DrawWeather(weatherData)
+      }
+
+      // 绘图
+      function DrawWeather(weatherData) {
+        //数据
+        var Dates = GetDailyData(weatherData, 'date')
+        var TempHigh = GetDailyData(weatherData, 'high')
+        var TempLow = GetDailyData(weatherData, 'low')
+        var dayText = GetDailyData(weatherData, 'dayText')
+        var dayCode = GetDailyData(weatherData, 'dayCode')
+
+        var myChart = echarts.init(document.getElementById('main'))
+
+        var option = {
+          visualMap: {
+            show: false,
+            type: 'continuous',
+            seriesIndex: 0,
+            min: 0,
+            max: 40,
+          },
+
+          title: {
+            text: weatherData['data']['location']['name'] + ' 未来一周气温变化',
+          },
+          tooltip: {
+            trigger: 'axis',
+            formatter: function (params) {
+              var dayText = 2
+              var dayCode = 3
+              let showText =
+                '<span style="font-size:16px;font-weight: bold">' +
+                params[0].name +
+                //params[k].value[params[k].encode.y[0]] +
+                '</span></br><hr color="#c7c7c7" size="1">' +
+                '<img src="images/weather/w' +
+                params[dayCode].value[params[dayCode].encode.y[0]] +
+                '.png"><br>天气 : ' +
+                params[dayText].value[params[dayText].encode.y[0]]
+
+              for (var i = 0; i < params.length - 2; i++) {
+                if (params[i].value[params[i].encode.y[0]] > 0) {
+                  let dotHtml =
+                    '<div class="paramsDiv"><span class="paramsDot"></span>'
+                  showText +=
+                    dotHtml +
+                    "<span class='paramsName'>" +
+                    params[i].seriesName +
+                    " : </span><span class='paramsValue'>" +
+                    params[i].value[params[i].encode.y[0]] +
+                    ' °C</span></br></div>'
+                }
+              }
+              return showText
+            },
+          },
+          legend: {
+            data: ['最高气温', '最低气温'],
+          },
+          dataset: {
+            source: [Dates, TempHigh, TempLow, dayText, dayCode],
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false,
+          },
+          yAxis: {
+            type: 'value',
+            axisLabel: {
+              formatter: '{value} °C',
+            },
+          },
+          series: [
+            {
+              name: '最高气温',
+              type: 'line',
+              seriesLayoutBy: 'row',
+              markPoint: {
+                data: [
+                  { type: 'max', name: '最大值' },
+                  { type: 'min', name: '最小值' },
+                ],
+              },
+              markLine: {
+                data: [{ type: 'average', name: '平均值' }],
+              },
+            },
+            {
+              name: '最低气温',
+              type: 'line',
+              seriesLayoutBy: 'row',
+              markPoint: {
+                data: [
+                  { type: 'max', name: '最大值' },
+                  { type: 'min', name: '最小值' },
+                ],
+              },
+              markLine: {
+                data: [{ type: 'average', name: '平均值' }],
+              },
+            },
+            {
+              name: 'dayText',
+              type: 'line',
+              seriesLayoutBy: 'row',
+              symbolSize: 0,
+              showSymbol: false,
+              lineStyle: {
+                width: 0,
+                color: 'rgba(0, 0, 0, 0)', // 线的颜色是透明的
+              },
+            },
+            {
+              name: 'dayCode',
+              type: 'line',
+              seriesLayoutBy: 'row',
+              symbolSize: 0,
+              showSymbol: false,
+              lineStyle: {
+                width: 0,
+                color: 'rgba(0, 0, 0, 0)', // 线的颜色是透明的
+              },
+            },
+          ],
+        }
+
+        myChart.setOption(option)
+      }
+
+      function GetDailyData(weatherData, str) {
+        var Datas = new Array()
+        for (var i = 0; i < 7; i++) {
+          if (str == 'date') {
+            Datas[i] = weatherData['data']['daily'][i][str].substring(5)
+          } else if (str == 'dayCode') {
+            Datas[i] = weatherData['data']['daily'][i][str].toString()
+          } else {
+            Datas[i] = weatherData['data']['daily'][i][str]
+          }
+        }
+        return Datas
+      }
+    </script>
+  </body>
+</html>
