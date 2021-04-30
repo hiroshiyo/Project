@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title></title>
     <!-- 引入 echarts.js -->
-    <script src="./js/echarts.min.js"></script>
+    <script src="https://cdn.staticfile.org/echarts/4.3.0/echarts.min.js"></script>
   </head>
   <header></header>
   <section></section>
@@ -13,22 +13,127 @@
     <div id="main" style="width: 600px; height: 400px"></div>
     <script type="text/javascript">
       // 读取数据
-      let address = 54406
-      let header = document.querySelector('header')
-      let section = document.querySelector('section')
-      let requestURL = 'datas/weather/' + address + '.json' //把address传入，修改地址
-      let request = new XMLHttpRequest()
-
-      request.open('GET', requestURL)
-      request.responseType = 'text'
-      request.send()
-
-      request.onload = function () {
-        let weatherDataText = request.response
-        let weatherData = JSON.parse(weatherDataText)
-        DrawWeather(weatherData)
+      let weatherData = {
+        msg: 'success',
+        code: 0,
+        data: {
+          location: {
+            id: '54401',
+            name: '张家口',
+            path: '中国, 河北, 张家口',
+            longitude: 114.88,
+            latitude: 40.78,
+            timezone: 8,
+          },
+          daily: [
+            {
+              date: '2021/04/20',
+              high: 24.0,
+              dayText: '多云',
+              dayCode: 1,
+              dayWindDirection: '东南风',
+              dayWindScale: '3~4级',
+              low: 9.0,
+              nightText: '多云',
+              nightCode: 1,
+              nightWindDirection: '东南风',
+              nightWindScale: '微风',
+            },
+            {
+              date: '2021/04/21',
+              high: 20.0,
+              dayText: '多云',
+              dayCode: 1,
+              dayWindDirection: '东南风',
+              dayWindScale: '3~4级',
+              low: 8.0,
+              nightText: '多云',
+              nightCode: 1,
+              nightWindDirection: '东南风',
+              nightWindScale: '微风',
+            },
+            {
+              date: '2021/04/22',
+              high: 18.0,
+              dayText: '多云',
+              dayCode: 1,
+              dayWindDirection: '东南风',
+              dayWindScale: '微风',
+              low: 8.0,
+              nightText: '多云',
+              nightCode: 1,
+              nightWindDirection: '东南风',
+              nightWindScale: '微风',
+            },
+            {
+              date: '2021/04/23',
+              high: 25.0,
+              dayText: '多云',
+              dayCode: 1,
+              dayWindDirection: '东南风',
+              dayWindScale: '3~4级',
+              low: 9.0,
+              nightText: '多云',
+              nightCode: 1,
+              nightWindDirection: '东南风',
+              nightWindScale: '3~4级',
+            },
+            {
+              date: '2021/04/24',
+              high: 21.0,
+              dayText: '多云',
+              dayCode: 1,
+              dayWindDirection: '东南风',
+              dayWindScale: '3~4级',
+              low: 8.0,
+              nightText: '多云',
+              nightCode: 1,
+              nightWindDirection: '东南风',
+              nightWindScale: '微风',
+            },
+            {
+              date: '2021/04/25',
+              high: 17.0,
+              dayText: '多云',
+              dayCode: 1,
+              dayWindDirection: '东南风',
+              dayWindScale: '微风',
+              low: 7.0,
+              nightText: '多云',
+              nightCode: 1,
+              nightWindDirection: '东南风',
+              nightWindScale: '微风',
+            },
+            {
+              date: '2021/04/26',
+              high: 19.0,
+              dayText: '多云',
+              dayCode: 1,
+              dayWindDirection: '东南风',
+              dayWindScale: '微风',
+              low: 8.0,
+              nightText: '多云',
+              nightCode: 1,
+              nightWindDirection: '东南风',
+              nightWindScale: '微风',
+            },
+          ],
+          now: {
+            precipitation: 0.0,
+            temperature: 19.7,
+            pressure: 925.0,
+            humidity: 33.0,
+            windDirection: '东南风',
+            windDirectionDegree: 126.0,
+            windSpeed: 4.8,
+            windScale: '3级',
+          },
+          alarm: [],
+          lastUpdate: '2021/04/20 19:25',
+        },
       }
 
+      DrawWeather(weatherData)
       // 绘图
       function DrawWeather(weatherData) {
         //数据

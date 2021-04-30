@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- 引入 echarts.js -->
+    <script src="./js/echarts.min.js"></script>
+  </head>
+  <header></header>
+  <section></section>
+  <body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px; height: 400px"></div>
+    <script type="text/javascript">
+      var myChart = echarts.init(document.getElementById("main"));
+      var option;
+
+      option = {
+        title: {
+          text: "该场馆的上座率",
+          left: "center",
+        },
+        tooltip: {
+          trigger: "item",
+          formatter: "{b}:{c} ({d}%)",
+        },
+        legend: {
+          orient: "vertical",
+          left: "left",
+          show: false,
+        },
+        series: [
+          {
+            name: "上座率",
+            type: "pie",
+            selectedMode: "single",
+            selectedOffset: 30,
+            radius: "50%",
+            label: {
+              normal: {
+                position: "outside",
+                formatter: "{b}:{c} \n({d}%)",
+                textStyle: {
+                  fontWeight: "normal",
+                  fontSize: 15,
+                },
+              },
+            },
+            data: [
+              {
+                value: 350,
+                name: "已座",
+                label: {
+                  position: "inside",
+                  //color: '' 改颜色
+                },
+              },
+              {
+                value: 50,
+                name: "未座",
+                selected: true,
+                label: {
+                  //color: '' 改颜色
+                },
+              },
+            ],
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+              },
+            },
+          },
+        ],
+      };
+
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>
