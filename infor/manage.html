@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京冬奥会-赛程安排</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/elementUI.css">
+    <script src="js/index.js"></script>
+    <script src="js/elementUI.js"></script>
+    <style>
+        .demo-table-expand {
+          font-size: 0;
+        }
+        .demo-table-expand label {
+          width: 90px;
+          color: #99a9bf;
+        }
+        .demo-table-expand .el-form-item {
+          margin-right: 0;
+          margin-bottom: 0;
+          width: 50%;
+        }
+        #app{
+            width:70%;
+            margin:auto;
+            box-shadow: 0.1em 0.1em 0.3em 0.1em rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 1em;
+            background-color: white;
+        }
+        body{
+            background-color: #486FBA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .el-col {
+            border-radius: 4px;
+        }
+        .bg-purple {
+            padding: 0.5em;
+            line-height: 1.2em;
+            height: 1.2em;
+        }
+
+        .grid-content {
+            border-radius: 4px;
+            min-height: 36px;
+        }
+        #head{
+            display: flex;
+            color:rgb(77, 77, 77);
+            font-size: 1.8em;
+            border-bottom:0.1em solid rgb(212, 209, 209);
+            font-weight: bolder;
+        }
+      </style>
+</head>
+<body>
+    <div id="app">
+        <manage></manage>
+    </div>
+    <template id="manage">
+        <div>
+            <el-col :span="24">
+                <div>
+                    <div class="grid-content bg-purple" id="head">
+                        赛程安排
+                    </div>
+                </div>
+            </el-col>
+            <el-table
+            :data="tableData"
+            style="width: 100%">
+            <el-table-column type="expand">
+              <template slot-scope="props">
+                <el-form label-position="left" inline class="demo-table-expand">
+                  <el-form-item label="比赛时间">
+                    <span>{{ props.row.time }}</span>
+                  </el-form-item>
+                  <el-form-item label="比赛项目">
+                    <span>{{ props.row.project }}</span>
+                  </el-form-item>
+                  <el-form-item label="参赛国家">
+                    <span>{{ props.row.nation }}</span>
+                  </el-form-item>
+                  <el-form-item label="所属场馆">
+                    <span>{{ props.row.place }}</span>
+                  </el-form-item>
+                  <el-form-item label="比赛状况">
+                    <span>{{ props.row.status }}</span>
+                  </el-form-item>
+                  <el-form-item label="赛程进度">
+                    <span>{{ props.row.progress }}</span>
+                  </el-form-item>
+                  <el-form-item label="比分">
+                      <span>{{ props.row.score }}</span>
+                    </el-form-item>
+                  <!-- <el-form-item label="商品描述">
+                    <span>{{ props.row.desc }}</span>
+                  </el-form-item> -->
+                </el-form>
+              </template>
+            </el-table-column>
+            <el-table-column
+              label="比赛时间"
+              prop="time">
+            </el-table-column>
+            <el-table-column
+              label="比赛项目"
+              prop="project">
+            </el-table-column>
+            <el-table-column
+              label="参赛国家"
+              prop="nation">
+            </el-table-column>
+            <el-table-column
+              label="比赛状况"
+              prop="status">
+            </el-table-column>
+          </el-table>
+        </div>
+      </template>
+      <script>
+          let vm = new Vue({
+              el:'#app',
+              components:{
+                  manage:{
+                      template:'#manage',
+                      data() {
+                        return {
+                            tableData: [{
+                                time: '2020/08/16 21:00',
+                                project: '篮球',
+                                nation: '美国 vs 韩国',
+                                place:'五棵松体育中心',
+                                status: '正在比赛',
+                                progress: '八进四',
+                                score:'6:6'
+                            }, {
+                                time: '2020/08/16 20:00',
+                                project: '篮球',
+                                nation: '美国 vs 韩国',
+                                place:'五棵松体育中心',
+                                status: '比赛结束',
+                                progress: '八进四',
+                                score:'6:6'
+                            }, {
+                                time: '2020/08/16 19:00',
+                                project: '篮球',
+                                nation: '美国 vs 韩国',
+                                place:'五棵松体育中心',
+                                status: '比赛结束',
+                                progress: '八进四',
+                                score:'6:6'
+                            }, {
+                                time: '2020/08/16 19:00',
+                                project: '篮球',
+                                nation: '美国 vs 韩国',
+                                place:'五棵松体育中心',
+                                status: '比赛结束',
+                                progress: '八进四',
+                                score:'6:6'
+                            }]
+                        }
+                    }
+                  }
+              },
+          })
+      </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京冬奥会-运动展示</title>
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/elementUI.css">
+    <script src="js/index.js"></script>
+    <script src="js/elementUI.js"></script>
+    <style>
+        html{
+            background-color:#486FBA;
+        }
+        body{
+            width:70%;
+            margin: auto;
+            padding: 1em;
+            /* background-color: rgba(182, 184, 206, 0.637); */
+        }
+        #app{
+            margin: 2em;
+            box-shadow: 0.1em 0.1em 0.3em 0.1em rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            /* background-color:  rgb(236, 232, 232); */
+        }
+        /* .el-tabs{
+            background-color:  rgb(236, 232, 232);
+        } */
+        .el-dropdown-link {
+            cursor: pointer;
+            color: white;
+        }
+        .el-icon-arrow-down {
+            font-size: 12px;
+        }
+        .el-row {
+            margin-bottom: 0.1em;
+            &:last-child {
+            margin-bottom: 0;
+            }
+        }
+        .el-col {
+            border-radius: 4px;
+        }
+
+        .bg-purple {
+            background: white;
+            padding: 1em;
+            line-height: 1.2em;
+            height: 1.2em;
+        }
+
+        .grid-content {
+            border-radius: 4px;
+            min-height: 36px;
+        }
+        .row-bg {
+            padding: 10px 0;
+            background-color: #f9fafc;
+        }
+        #head{
+            display: flex;
+            /* border-bottom: 1px solid rgb(212, 209, 209); */
+            margin-bottom: 0.5em;
+        }
+        .info{
+            line-height: 1.5em;
+            height: 1.5em;
+            border-bottom: 1px solid rgb(170, 167, 167);
+            padding-bottom:0.5em;
+            font-size:1.3em;
+            color:rgb(77, 77, 77);
+            font-weight: bolder;
+        }
+        .block{
+            margin-top:1em;
+        }
+        #main{
+            background-color: white;
+            padding: 1em;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <tab></tab>
+    </div>
+    <template id="tab">
+        <div id="main">
+            <el-row id="head">
+                <el-col :span="24">
+                    <div class="grid-content bg-purple" id="head">
+                        <el-breadcrumb separator-class="el-icon-arrow-right" style="font-size: 1.5em;">
+                            <el-breadcrumb-item>
+                                <a href="index.html">首页</a>
+                            </el-breadcrumb-item>
+                            <el-breadcrumb-item>
+                                <a :href="jpath" v-cloak>{{city}}</a>
+                            </el-breadcrumb-item>
+                            <el-breadcrumb-item>
+                                <a v-cloak>{{place}}</a>
+                            </el-breadcrumb-item>
+                        </el-breadcrumb>
+                        <el-dropdown style="margin-left:auto;" @command="handleCommand">
+                            <span class="el-dropdown-link" style="line-height: 1.5em;height: 1.5em;color:black">
+                                切换场馆<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item v-show="city=='北京'" command="首钢滑雪大跳台">首钢滑雪大跳台</el-dropdown-item>
+                                <el-dropdown-item v-show="city=='北京'" command="五棵松体育中心">五棵松体育中心</el-dropdown-item>
+                                <el-dropdown-item v-show="city=='北京'" command="首都体育馆">首都体育馆</el-dropdown-item>
+                                <el-dropdown-item v-show="city=='北京'" command="首都体育场">首都体育场</el-dropdown-item>
+                                <el-dropdown-item v-show="city=='北京'" command="国家游泳中心">国家游泳中心</el-dropdown-item>
+                                <el-dropdown-item v-show="city==='北京'" command="国家速滑馆">国家速滑馆</el-dropdown-item>
+                                <el-dropdown-item v-show="city==='延庆'" command="国家高山滑雪中心">国家高山滑雪中心</el-dropdown-item>
+                                <el-dropdown-item v-show="city==='延庆'" command="国家雪车雪橇中心">国家雪车雪橇中心</el-dropdown-item>
+                                <el-dropdown-item v-show="city==='张家口'" command="云顶滑雪公园">云顶滑雪公园</el-dropdown-item>
+                                <el-dropdown-item v-show="city=='张家口'" command="国家冬季两项中心">国家冬季两项中心</el-dropdown-item>
+                                <el-dropdown-item v-show="city=='张家口'" command="国家跳台滑雪中心">国家跳台滑雪中心</el-dropdown-item>
+                                <el-dropdown-item v-show="city=='张家口'" command="国家越野滑雪中心">国家越野滑雪中心</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
+                    </div>
+                </el-col>
+            </el-row>
+            <el-tabs type="border-card" tab-position="left">
+                <el-tab-pane label="场馆信息">
+                    <!-- <div class="info">场馆信息</div> -->
+                </el-tab-pane>
+                <el-tab-pane label="赛程安排">
+                    <!-- <div class="info">赛程安排</div> -->
+                    <div class="block">
+                        <el-timeline>
+                          <el-timeline-item timestamp="2022/8/16 20:00" placement="top">
+                            <el-card>
+                              <h3>美国 vs 韩国</h3>
+                              <p>赛程进行中。目前比分6:6</p>
+                            </el-card>
+                          </el-timeline-item>
+                          <el-timeline-item timestamp="2022/8/16 19:00" placement="top">
+                            <el-card>
+                              <h3>美国 vs 韩国</h3>
+                              <p>赛程已结束。比分7:6</p>
+                            </el-card>
+                          </el-timeline-item>
+                          <el-timeline-item timestamp="2022/8/15 09:10" placement="top">
+                            <el-card>
+                              <h3>美国 vs 韩国</h3>
+                              <p>赛程已结束。比分6:7</p>
+                            </el-card>
+                          </el-timeline-item>
+                        </el-timeline>
+                      </div>
+                </el-tab-pane>
+                <el-tab-pane label="上座率">
+                    <!-- <div class="info">上座率</div> -->
+                </el-tab-pane>
+                <el-tab-pane label="天气预报">
+                    <!-- <div class="info">天气预报</div> -->
+                </el-tab-pane>
+            </el-tabs>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el:'#app',
+            components:{
+                tab:{
+                    template:'#tab',
+                    data(){
+                        return{
+                            absolute:'',
+                            city:'',
+                            cityC:'',
+                            place:'',
+                            options:[
+                                ['首钢滑雪大跳台','五棵松体育中心','首都体育馆','国家游泳中心','国家体育馆','国家速滑馆'],
+                                ['国家高山滑雪中心','国家雪车雪橇中心'],
+                                ['云顶滑雪公园','国家冬季两项中心','国家跳台滑雪中心','国家越野滑雪中心']
+                            ]
+                        }
+                    },
+                    methods:{
+                        handleCommand(command) {
+                            window.location.href = `${this.absolute}region=${this.cityC}&place=${command}`;
+                        }
+                    },
+                    mounted(){
+                        let href = window.location.href;
+                        let url = href.split('display.html?')[1];
+                        this.absolute = href.split('display.html?')[0];
+                        this.absolute = this.absolute+'display.html?';
+                        let region = url.split('&')[0];
+                        this.city = region.split('=')[1];
+                        let placeT = url.split('&')[1];
+                        this.place = placeT.split('=')[1];
+                        this.cityC = this.city;
+                        switch(this.city){
+                            case 'ZhangJiaKou':
+                                this.city = '张家口';
+                                break;
+                            case 'BeiJing':
+                                this.city = '北京';
+                                break;
+                            case 'YanQing':
+                                this.city = '延庆';
+                                break;
+                        }
+                    },
+                    computed:{
+                        'jpath'(){
+                            return 'select.html?'+this.cityC;
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>
