@@ -10,10 +10,11 @@
   <section></section>
   <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 600px; height: 400px"></div>
+    <div id="Medalsunburst" style="width: 600px; height: 400px"></div>
+    <div id="MedalData" style="width: 600px; height: 400px"></div>
     <script type="text/javascript">
-      var myChart = echarts.init(document.getElementById('main'))
-      var data = [
+      var MedalChart = echarts.init(document.getElementById('Medalsunburst'))
+      var MedalData = [
         {
           name: '中国',
           children: [
@@ -23,6 +24,15 @@
               itemStyle: {
                 color: '#FFD700',
               },
+              children: [
+                {
+                  name: '11',
+                  value: 11,
+                  itemStyle: {
+                    color: '#FFD700',
+                  },
+                },
+              ],
             },
             {
               name: '银牌',
@@ -30,6 +40,15 @@
               itemStyle: {
                 color: '#C0C0C0',
               },
+              children: [
+                {
+                  name: '9',
+                  value: 9,
+                  itemStyle: {
+                    color: '#C0C0C0',
+                  },
+                },
+              ],
             },
             {
               name: '铜牌',
@@ -37,6 +56,15 @@
               itemStyle: {
                 color: '#BFAD6F',
               },
+              children: [
+                {
+                  name: '7',
+                  value: 7,
+                  itemStyle: {
+                    color: '#BFAD6F',
+                  },
+                },
+              ],
             },
           ],
         },
@@ -49,6 +77,15 @@
               itemStyle: {
                 color: '#FFD700',
               },
+              children: [
+                {
+                  name: '10',
+                  value: 10,
+                  itemStyle: {
+                    color: '#FFD700',
+                  },
+                },
+              ],
             },
             {
               name: '银牌',
@@ -56,6 +93,15 @@
               itemStyle: {
                 color: '#C0C0C0',
               },
+              children: [
+                {
+                  name: '10',
+                  value: 10,
+                  itemStyle: {
+                    color: '#C0C0C0',
+                  },
+                },
+              ],
             },
             {
               name: '铜牌',
@@ -63,6 +109,15 @@
               itemStyle: {
                 color: '#BFAD6F',
               },
+              children: [
+                {
+                  name: '5',
+                  value: 5,
+                  itemStyle: {
+                    color: '#BFAD6F',
+                  },
+                },
+              ],
             },
           ],
         },
@@ -91,6 +146,15 @@
               itemStyle: {
                 color: '#C0C0C0',
               },
+              children: [
+                {
+                  name: '15',
+                  value: 15,
+                  itemStyle: {
+                    color: '#C0C0C0',
+                  },
+                },
+              ],
             },
             {
               name: '铜牌',
@@ -98,21 +162,30 @@
               itemStyle: {
                 color: '#BFAD6F',
               },
+              children: [
+                {
+                  name: '5',
+                  value: 5,
+                  itemStyle: {
+                    color: '#BFAD6F',
+                  },
+                },
+              ],
             },
           ],
         },
       ]
 
-      option = {
+      Medaloption = {
         series: {
           type: 'sunburst',
-
-          data: data,
+          data: MedalData,
           radius: [0, '90%'],
           label: {
             rotate: 'radial',
           },
-
+          selectedMode: true,
+          //select: Selected(),
           levels: [
             {},
             {
@@ -145,8 +218,17 @@
           ],
         },
       }
+      MedalChart.setOption(Medaloption)
 
-      myChart.setOption(option)
+      function Selected(){
+        var SelectedChart = echarts.init(document.getElementById('MedalData'))
+        Selectedoption = {
+          title: 's'
+        }
+
+        SelectedChart.setOption(Selectedoption)
+      }
     </script>
+    
   </body>
 </html>

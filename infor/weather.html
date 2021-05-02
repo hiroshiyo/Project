@@ -6,116 +6,112 @@
     <!-- 引入 echarts.js -->
     <script src="./js/echarts.min.js"></script>
   </head>
-  <header></header>
-  <section></section>
   <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
     <div id="main" style="width: 600px; height: 400px"></div>
     <script type="text/javascript">
       // 读取数据
       let weatherData = {
-        msg: 'success',
-        code: 0,
-        data: {
+        ZhangJiaKou: {
           location: {
-            id: '54401',
-            name: '张家口',
-            path: '中国, 河北, 张家口',
+            id: "54401",
+            name: "张家口",
+            path: "中国, 河北, 张家口",
             longitude: 114.88,
             latitude: 40.78,
             timezone: 8,
           },
           daily: [
             {
-              date: '2021/04/20',
+              date: "2021/04/20",
               high: 24.0,
-              dayText: '多云',
+              dayText: "多云",
               dayCode: 1,
-              dayWindDirection: '东南风',
-              dayWindScale: '3~4级',
+              dayWindDirection: "东南风",
+              dayWindScale: "3~4级",
               low: 9.0,
-              nightText: '多云',
+              nightText: "多云",
               nightCode: 1,
-              nightWindDirection: '东南风',
-              nightWindScale: '微风',
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
             },
             {
-              date: '2021/04/21',
+              date: "2021/04/21",
               high: 20.0,
-              dayText: '多云',
+              dayText: "多云",
               dayCode: 1,
-              dayWindDirection: '东南风',
-              dayWindScale: '3~4级',
+              dayWindDirection: "东南风",
+              dayWindScale: "3~4级",
               low: 8.0,
-              nightText: '多云',
+              nightText: "多云",
               nightCode: 1,
-              nightWindDirection: '东南风',
-              nightWindScale: '微风',
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
             },
             {
-              date: '2021/04/22',
+              date: "2021/04/22",
               high: 18.0,
-              dayText: '多云',
+              dayText: "多云",
               dayCode: 1,
-              dayWindDirection: '东南风',
-              dayWindScale: '微风',
+              dayWindDirection: "东南风",
+              dayWindScale: "微风",
               low: 8.0,
-              nightText: '多云',
+              nightText: "多云",
               nightCode: 1,
-              nightWindDirection: '东南风',
-              nightWindScale: '微风',
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
             },
             {
-              date: '2021/04/23',
+              date: "2021/04/23",
               high: 25.0,
-              dayText: '多云',
+              dayText: "多云",
               dayCode: 1,
-              dayWindDirection: '东南风',
-              dayWindScale: '3~4级',
+              dayWindDirection: "东南风",
+              dayWindScale: "3~4级",
               low: 9.0,
-              nightText: '多云',
+              nightText: "多云",
               nightCode: 1,
-              nightWindDirection: '东南风',
-              nightWindScale: '3~4级',
+              nightWindDirection: "东南风",
+              nightWindScale: "3~4级",
             },
             {
-              date: '2021/04/24',
+              date: "2021/04/24",
               high: 21.0,
-              dayText: '多云',
+              dayText: "多云",
               dayCode: 1,
-              dayWindDirection: '东南风',
-              dayWindScale: '3~4级',
+              dayWindDirection: "东南风",
+              dayWindScale: "3~4级",
               low: 8.0,
-              nightText: '多云',
+              nightText: "多云",
               nightCode: 1,
-              nightWindDirection: '东南风',
-              nightWindScale: '微风',
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
             },
             {
-              date: '2021/04/25',
+              date: "2021/04/25",
               high: 17.0,
-              dayText: '多云',
+              dayText: "多云",
               dayCode: 1,
-              dayWindDirection: '东南风',
-              dayWindScale: '微风',
+              dayWindDirection: "东南风",
+              dayWindScale: "微风",
               low: 7.0,
-              nightText: '多云',
+              nightText: "多云",
               nightCode: 1,
-              nightWindDirection: '东南风',
-              nightWindScale: '微风',
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
             },
             {
-              date: '2021/04/26',
+              date: "2021/04/26",
               high: 19.0,
-              dayText: '多云',
+              dayText: "多云",
               dayCode: 1,
-              dayWindDirection: '东南风',
-              dayWindScale: '微风',
+              dayWindDirection: "东南风",
+              dayWindScale: "微风",
               low: 8.0,
-              nightText: '多云',
+              nightText: "多云",
               nightCode: 1,
-              nightWindDirection: '东南风',
-              nightWindScale: '微风',
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
             },
           ],
           now: {
@@ -123,45 +119,276 @@
             temperature: 19.7,
             pressure: 925.0,
             humidity: 33.0,
-            windDirection: '东南风',
+            windDirection: "东南风",
             windDirectionDegree: 126.0,
             windSpeed: 4.8,
-            windScale: '3级',
+            windScale: "3级",
           },
           alarm: [],
-          lastUpdate: '2021/04/20 19:25',
+          lastUpdate: "2021/04/20 19:25",
         },
-      }
+        YanQing: {
+          location: {
+            id: "54406",
+            name: "延庆",
+            path: "中国, 北京, 延庆",
+            longitude: 115.97,
+            latitude: 40.45,
+            timezone: 8,
+          },
+          daily: [
+            {
+              date: "2021/04/20",
+              high: 24.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "东南风",
+              dayWindScale: "3~4级",
+              low: 10.0,
+              nightText: "多云",
+              nightCode: 1,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/21",
+              high: 19.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "东南风",
+              dayWindScale: "3~4级",
+              low: 9.0,
+              nightText: "小雨",
+              nightCode: 7,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/22",
+              high: 18.0,
+              dayText: "阴",
+              dayCode: 2,
+              dayWindDirection: "东南风",
+              dayWindScale: "微风",
+              low: 8.0,
+              nightText: "阴",
+              nightCode: 2,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/23",
+              high: 19.0,
+              dayText: "阴",
+              dayCode: 2,
+              dayWindDirection: "东南风",
+              dayWindScale: "微风",
+              low: 10.0,
+              nightText: "阴",
+              nightCode: 2,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/24",
+              high: 20.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "东风",
+              dayWindScale: "微风",
+              low: 11.0,
+              nightText: "多云",
+              nightCode: 1,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/25",
+              high: 18.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "东南风",
+              dayWindScale: "微风",
+              low: 10.0,
+              nightText: "多云",
+              nightCode: 1,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/26",
+              high: 20.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "东南风",
+              dayWindScale: "微风",
+              low: 8.0,
+              nightText: "晴",
+              nightCode: 0,
+              nightWindDirection: "东风",
+              nightWindScale: "微风",
+            },
+          ],
+          now: {
+            precipitation: 0.0,
+            temperature: 19.9,
+            pressure: 958.0,
+            humidity: 33.0,
+            windDirection: "东南风",
+            windDirectionDegree: 122.0,
+            windSpeed: 3.8,
+            windScale: "3级",
+          },
+          alarm: [],
+          lastUpdate: "2021/04/20 19:05",
+        },
+        BeiJing: {
+          location: {
+            id: "54511",
+            name: "北京",
+            path: "中国, 北京, 北京",
+            longitude: 116.47,
+            latitude: 39.8,
+            timezone: 8,
+          },
+          daily: [
+            {
+              date: "2021/04/20",
+              high: 26.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "南风",
+              dayWindScale: "3~4级",
+              low: 13.0,
+              nightText: "多云",
+              nightCode: 1,
+              nightWindDirection: "南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/21",
+              high: 20.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "东南风",
+              dayWindScale: "3~4级",
+              low: 13.0,
+              nightText: "小雨",
+              nightCode: 7,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/22",
+              high: 18.0,
+              dayText: "阴",
+              dayCode: 2,
+              dayWindDirection: "东风",
+              dayWindScale: "微风",
+              low: 10.0,
+              nightText: "阴",
+              nightCode: 2,
+              nightWindDirection: "东风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/23",
+              high: 20.0,
+              dayText: "阴",
+              dayCode: 2,
+              dayWindDirection: "东风",
+              dayWindScale: "微风",
+              low: 10.0,
+              nightText: "阴",
+              nightCode: 2,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/24",
+              high: 21.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "东风",
+              dayWindScale: "微风",
+              low: 12.0,
+              nightText: "多云",
+              nightCode: 1,
+              nightWindDirection: "东南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/25",
+              high: 20.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "东南风",
+              dayWindScale: "微风",
+              low: 10.0,
+              nightText: "多云",
+              nightCode: 1,
+              nightWindDirection: "南风",
+              nightWindScale: "微风",
+            },
+            {
+              date: "2021/04/26",
+              high: 22.0,
+              dayText: "多云",
+              dayCode: 1,
+              dayWindDirection: "南风",
+              dayWindScale: "微风",
+              low: 10.0,
+              nightText: "晴",
+              nightCode: 0,
+              nightWindDirection: "南风",
+              nightWindScale: "微风",
+            },
+          ],
+          now: {
+            precipitation: 0.0,
+            temperature: 22.6,
+            pressure: 1012.0,
+            humidity: 29.0,
+            windDirection: "西南风",
+            windDirectionDegree: 196.0,
+            windSpeed: 2.5,
+            windScale: "微风",
+          },
+          alarm: [],
+          lastUpdate: "2021/04/20 19:20",
+        },
+      };
 
-      DrawWeather(weatherData)
+      var place = 'ZhangJiaKou'  //赛区选择
+      DrawWeather(weatherData[place]);
       // 绘图
       function DrawWeather(weatherData) {
         //数据
-        var Dates = GetDailyData(weatherData, 'date')
-        var TempHigh = GetDailyData(weatherData, 'high')
-        var TempLow = GetDailyData(weatherData, 'low')
-        var dayText = GetDailyData(weatherData, 'dayText')
-        var dayCode = GetDailyData(weatherData, 'dayCode')
+        var Dates = GetDailyData(weatherData, "date");
+        var TempHigh = GetDailyData(weatherData, "high");
+        var TempLow = GetDailyData(weatherData, "low");
+        var dayText = GetDailyData(weatherData, "dayText");
+        var dayCode = GetDailyData(weatherData, "dayCode");
 
-        var myChart = echarts.init(document.getElementById('main'))
+        var myChart = echarts.init(document.getElementById("main"));
 
         var option = {
           visualMap: {
             show: false,
-            type: 'continuous',
+            type: "continuous",
             seriesIndex: 0,
             min: 0,
             max: 40,
           },
 
           title: {
-            text: weatherData['data']['location']['name'] + ' 未来一周气温变化',
+            text: weatherData["location"]["name"] + " 未来一周气温变化",
           },
           tooltip: {
-            trigger: 'axis',
+            trigger: "axis",
             formatter: function (params) {
-              var dayText = 2
-              var dayCode = 3
+              var dayText = 2;
+              var dayCode = 3;
               let showText =
                 '<span style="font-size:16px;font-weight: bold">' +
                 params[0].name +
@@ -170,109 +397,109 @@
                 '<img src="images/weather/w' +
                 params[dayCode].value[params[dayCode].encode.y[0]] +
                 '.png"><br>天气 : ' +
-                params[dayText].value[params[dayText].encode.y[0]]
+                params[dayText].value[params[dayText].encode.y[0]];
 
               for (var i = 0; i < params.length - 2; i++) {
                 if (params[i].value[params[i].encode.y[0]] > 0) {
                   let dotHtml =
-                    '<div class="paramsDiv"><span class="paramsDot"></span>'
+                    '<div class="paramsDiv"><span class="paramsDot"></span>';
                   showText +=
                     dotHtml +
                     "<span class='paramsName'>" +
                     params[i].seriesName +
                     " : </span><span class='paramsValue'>" +
                     params[i].value[params[i].encode.y[0]] +
-                    ' °C</span></br></div>'
+                    " °C</span></br></div>";
                 }
               }
-              return showText
+              return showText;
             },
           },
           legend: {
-            data: ['最高气温', '最低气温'],
+            data: ["最高气温", "最低气温"],
           },
           dataset: {
             source: [Dates, TempHigh, TempLow, dayText, dayCode],
           },
           xAxis: {
-            type: 'category',
+            type: "category",
             boundaryGap: false,
           },
           yAxis: {
-            type: 'value',
+            type: "value",
             axisLabel: {
-              formatter: '{value} °C',
+              formatter: "{value} °C",
             },
           },
           series: [
             {
-              name: '最高气温',
-              type: 'line',
-              seriesLayoutBy: 'row',
+              name: "最高气温",
+              type: "line",
+              seriesLayoutBy: "row",
               markPoint: {
                 data: [
-                  { type: 'max', name: '最大值' },
-                  { type: 'min', name: '最小值' },
+                  { type: "max", name: "最大值" },
+                  { type: "min", name: "最小值" },
                 ],
               },
               markLine: {
-                data: [{ type: 'average', name: '平均值' }],
+                data: [{ type: "average", name: "平均值" }],
               },
             },
             {
-              name: '最低气温',
-              type: 'line',
-              seriesLayoutBy: 'row',
+              name: "最低气温",
+              type: "line",
+              seriesLayoutBy: "row",
               markPoint: {
                 data: [
-                  { type: 'max', name: '最大值' },
-                  { type: 'min', name: '最小值' },
+                  { type: "max", name: "最大值" },
+                  { type: "min", name: "最小值" },
                 ],
               },
               markLine: {
-                data: [{ type: 'average', name: '平均值' }],
+                data: [{ type: "average", name: "平均值" }],
               },
             },
             {
-              name: 'dayText',
-              type: 'line',
-              seriesLayoutBy: 'row',
+              name: "dayText",
+              type: "line",
+              seriesLayoutBy: "row",
               symbolSize: 0,
               showSymbol: false,
               lineStyle: {
                 width: 0,
-                color: 'rgba(0, 0, 0, 0)', // 线的颜色是透明的
+                color: "rgba(0, 0, 0, 0)", // 线的颜色是透明的
               },
             },
             {
-              name: 'dayCode',
-              type: 'line',
-              seriesLayoutBy: 'row',
+              name: "dayCode",
+              type: "line",
+              seriesLayoutBy: "row",
               symbolSize: 0,
               showSymbol: false,
               lineStyle: {
                 width: 0,
-                color: 'rgba(0, 0, 0, 0)', // 线的颜色是透明的
+                color: "rgba(0, 0, 0, 0)", // 线的颜色是透明的
               },
             },
           ],
-        }
+        };
 
-        myChart.setOption(option)
+        myChart.setOption(option);
       }
 
       function GetDailyData(weatherData, str) {
-        var Datas = new Array()
+        var Datas = new Array();
         for (var i = 0; i < 7; i++) {
-          if (str == 'date') {
-            Datas[i] = weatherData['data']['daily'][i][str].substring(5)
-          } else if (str == 'dayCode') {
-            Datas[i] = weatherData['data']['daily'][i][str].toString()
+          if (str == "date") {
+            Datas[i] = weatherData["daily"][i][str].substring(5);
+          } else if (str == "dayCode") {
+            Datas[i] = weatherData["daily"][i][str].toString();
           } else {
-            Datas[i] = weatherData['data']['daily'][i][str]
+            Datas[i] = weatherData["daily"][i][str];
           }
         }
-        return Datas
+        return Datas;
       }
     </script>
   </body>

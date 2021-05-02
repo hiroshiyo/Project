@@ -108,6 +108,7 @@
                 }
             },1500);
         }
+
         for(let i = 0;i < d.length;i++){
             // 鼠标移动到当前小图片上时触发
             d[i].onmousemove = function(){
@@ -116,6 +117,7 @@
                 b.href = "https://www.runoob.com/html/html-links.html"  //链接
                 // 鼠标移动到小图片上面时关闭定时器并重置定时，
                 // 鼠标移开后再继续执行
+                
                 a()
                 clearInterval(time)
                 index = i + 1

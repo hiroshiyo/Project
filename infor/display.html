@@ -197,7 +197,7 @@
                         let region = url.split('&')[0];
                         this.city = region.split('=')[1];
                         let placeT = url.split('&')[1];
-                        this.place = placeT.split('=')[1];
+                        this.place = decodeURIComponent(placeT.split('=')[1]);
                         this.cityC = this.city;
                         switch(this.city){
                             case 'ZhangJiaKou':
