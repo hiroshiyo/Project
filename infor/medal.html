@@ -185,7 +185,7 @@
             rotate: 'radial',
           },
           selectedMode: true,
-          //select: Selected(),
+          //select: Selected(any),
           levels: [
             {},
             {
@@ -220,7 +220,7 @@
       }
       MedalChart.setOption(Medaloption)
 
-      function Selected(){
+      function Selected(any){
         var SelectedChart = echarts.init(document.getElementById('MedalData'))
         Selectedoption = {
           title: 's'
