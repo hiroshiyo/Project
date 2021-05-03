@@ -53,18 +53,18 @@
         }
 
         #zjk {
-            top: 380px;
-            left: 580px;
+            top: 480px;
+            left: 720px;
         }
 
         #yq {
-            top: 540px;
-            left: 760px;
+            top: 700px;
+            left: 1010px;
         }
 
         #bj {
-            top: 700px;
-            left: 900px;
+            top: 900px;
+            left: 1200px;
         }
 
         #bk {
@@ -83,7 +83,7 @@
             width: 400px;
             top: 1000px;
             left: 2190px;
-            position: absolute; 
+            position: absolute;
             box-shadow: 10px 10px rgba(58, 58, 58, 0.959);
         }
 
@@ -195,8 +195,8 @@
                 </div>
             </div>
         </el-tooltip>
-            <el-button round id="bk">冬奥百科</el-button>
-            <el-button round id="sk">赛况统计</el-button>
+        <el-button round id="bk">冬奥百科</el-button>
+        <el-button round id="sk">赛况统计</el-button>
     </div>
     <script>
         let vm = new Vue({
@@ -208,6 +208,14 @@
                 }
             }
         })
+    </script>
+
+    <script>
+        window.onload = function () {
+            var div = document.getElementById("app");
+            div.addEventListener("click", function (e) { console.log(e) })
+        }
+
     </script>
 </body>
 
