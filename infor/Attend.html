@@ -10,14 +10,68 @@
   <section></section>
   <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 600px; height: 400px"></div>
+    <div id="AttendPie" style="width: 600px; height: 400px"></div>
     <script type="text/javascript">
-      var myChart = echarts.init(document.getElementById("main"));
-      var option;
+      var gym = '国家速滑馆'  //改场馆  gym = this.place
+      var AttendData = {
+        国家速滑馆: {
+          attend: 305,
+          unattend: 60
+        },
+        国家体育馆: {
+          attend: 315,
+          unattend: 70},
+        国家体育场: {
+          attend: 305,
+          unattend: 60
+        },
+        国家游泳中心: {
+          attend: 365,
+          unattend: 60
+        },
+        首都体育馆: {
+          attend: 325,
+          unattend: 60
+        },
+        五棵松体育中心: {
+          attend: 305,
+          unattend: 60
+        },
+        首钢滑雪大跳台: {
+          attend: 305,
+          unattend: 60
+        },
+        国家雪车雪橇中心: {
+          attend: 365,
+          unattend: 60
+        },
+        国家高山滑雪中心: {
+          attend: 365,
+          unattend: 60
+        },
+        云顶滑雪公园: {
+          attend: 465,
+          unattend: 80},
+        国家冬季两项中心: {
+          attend: 565,
+          unattend: 80
+        },
+        国家跳台滑雪中心: {
+          attend: 365,
+          unattend: 60
+        },
+        国家越野滑雪中心: {
+          attend: 365,
+          unattend: 60
+        },
+      };
+      var AttendChart = echarts.init(document.getElementById("AttendPie"));
+      var Attendoption;
 
-      option = {
+      var gymData = AttendData[gym]
+      Attendoption = {
         title: {
-          text: "该场馆的上座率",
+          text: gym + "的上座率",
           left: "center",
         },
         tooltip: {
@@ -48,7 +102,7 @@
             },
             data: [
               {
-                value: 350,
+                value: gymData.attend,
                 name: "已座",
                 label: {
                   position: "inside",
@@ -56,7 +110,7 @@
                 },
               },
               {
-                value: 50,
+                value: gymData.unattend,
                 name: "未座",
                 selected: true,
                 label: {
@@ -75,7 +129,7 @@
         ],
       };
 
-      myChart.setOption(option);
+      AttendChart.setOption(Attendoption);
     </script>
   </body>
 </html>
