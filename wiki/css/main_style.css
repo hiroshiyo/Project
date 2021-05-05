@@ -1,104 +1,156 @@
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
+
 body {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #486fba;
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #486fba;
+	overflow: hidden;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+.toggle-text{
+	display: none;
+	width: 820px;
+	height: 600px;
+
+	text-align: left;
+	font-size: 20px;
+	cursor: pointer;
+	overflow: auto;
+}
+.toggle-text>li{
+	color: rgb(77, 77, 77);
+	left:10%;
+	right: 10%;
+	margin: 20px 40px;
+}
+.toggle-text.active{
+	display: block;
+	transition: .5s;
 }
 
 .container {
-  width: 820px;
-  height: 700px;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-  border-radius: 10px;
-  background-color: #eeeeef;
+	width: 820px;
+	height: 700px;
+	border-radius: 10px;
+	background-color: #eeeeef;
+	overflow: hidden;
+}
+.container.active{
+	display: none;
 }
 .container .head {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: left;
-  align-content: center;
-  width: 700px;
-  height: 100px;
-  padding: 1em;
-  line-height: 1.2em;
-  height: 1.2em;
-  border-radius: 4px;
-  min-height: 36px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: left;
+	align-content: center;
+	width: 763px;
+	height: 100px;
+	padding: 1em;
+	line-height: 1.2em;
+	height: 1.2em;
+	border-radius: 4px;
+	min-height: 36px;
 }
+
 #head {
-  display: flex;
-  color: rgb(77, 77, 77);
-  font-size: 1.8em;
-  border-bottom: 0.1em solid rgb(212, 209, 209);
-  font-weight: bolder;
+	display: flex;
+	color: rgb(77, 77, 77);
+	font-size: 1.8em;
+	border-bottom: 0.1em solid rgb(212, 209, 209);
+	font-weight: bolder;
 }
+.encyclopedia.active{
+	display: none;
+	transition: .5s;
+}
+.encyclopedia{
+	width: 100%;
+	height: 600px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	align-items: center;
+	
+}
+
 .container .box {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  width: 100px;
-  height: 140px;
-  margin: 20px;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	align-content: center;
+	width: 100px;
+	height: 140px;
+	margin: 20px;
+	cursor: pointer;
 }
+
 .container .box .img {
-  width: 100px;
-  height: 100px;
-  box-shadow: 18px 18px 30px rgba(0, 0, 0, 0.1),
-    -18px -18px 30px rgba(255, 255, 255, 1);
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #efeeee;
-  transition: box-shadow 0.2s ease-out;
-  position: relative;
+	width: 100px;
+	height: 100px;
+	box-shadow: 18px 18px 30px rgba(0, 0, 0, 0.1),
+		-18px -18px 30px rgba(255, 255, 255, 1);
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #efeeee;
+	transition: box-shadow 0.2s ease-out;
+	position: relative;
 }
 
 .container .box .img img {
-  width: 60px;
-  transition: width 0.2s ease-out;
+	width: 60px;
+	transition: width 0.2s ease-out;
 }
+
 .container .box p {
-  color: slategrey;
+	color: slategrey;
 }
+
 .container .box .img:hover {
-  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2),
-    0px 0px 0px rgba(255, 255, 255, 0.8),
-    inset 18px 18px 30px rgba(0, 0, 0, 0.1),
-    inset -18px -18px 30px rgba(255, 255, 255, 1);
-  transition: box-shadow 0.2s ease-out;
+	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2),
+		0px 0px 0px rgba(255, 255, 255, 0.8),
+		inset 18px 18px 30px rgba(0, 0, 0, 0.1),
+		inset -18px -18px 30px rgba(255, 255, 255, 1);
+	transition: box-shadow 0.2s ease-out;
 }
+
 .container .box .img:hover img {
-  width: 58px;
-  transition: width 0.2s ease-out;
+	width: 58px;
+	transition: width 0.2s ease-out;
 }
-h3{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    /* display: inline-block;
+
+h3 {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	/* display: inline-block;
     width: 100px;
     height: 30px; */
-    color: #ecf0f1;
-    opacity: 0;
-    transition: .5s opacity ease-in-out;
+	color: #ecf0f1;
+	opacity: 0;
+	transition: .5s opacity ease-in-out;
 }
-.show{
-    /* flex-grow是这个Demo的关键！！ 因为这个效果才会有这个Demo */
-    flex: 1;
+
+.show {
+	/* flex-grow是这个Demo的关键！！ 因为这个效果才会有这个Demo */
+	flex: 1;
 }
-.show>h3{
-    opacity: 1;
+
+.show>h3 {
+	opacity: 1;
 }

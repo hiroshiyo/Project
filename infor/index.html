@@ -23,6 +23,7 @@
             background-size: cover;
             position: absolute;
             background-color: #486FBA;
+
         }
 
         #images {
@@ -125,6 +126,10 @@
             animation: moveBiggest 1s infinite;
         }
 
+        .el-tooltip__popper is-dark {
+            font-size: 72px; !important
+        }               
+
         @keyframes moveInner {
             from {
                 width: 1em;
@@ -195,7 +200,7 @@
                 </div>
             </div>
         </el-tooltip>
-        <el-button round id="bk">冬奥百科</el-button>
+        <el-button round id="bk" >冬奥百科</el-button>
         <el-button round id="sk">赛况统计</el-button>
     </div>
     <script>
@@ -209,14 +214,14 @@
             }
         })
     </script>
-
+<!--
     <script>
         window.onload = function () {
             var div = document.getElementById("app");
             div.addEventListener("click", function (e) { console.log(e) })
         }
-
     </script>
+-->
 </body>
 
 </html>
