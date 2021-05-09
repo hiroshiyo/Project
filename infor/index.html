@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北京冬奥会-首页</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/elementUI.css">
+    <script src="js/index.js"></script>
+    <script src="js/elementUI.js"></script>
+    <style>
+        html {
+            width: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            zoom: 0.5;
+            /* background:url(images/index.jpg) no-repeat; */
+            background-size: cover;
+            position: absolute;
+            background-color: #486FBA;
+
+        }
+
+        #images {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background: url(images/index.jpg) no-repeat;
+        }
+
+        #images image {
+            width: 100%;
+            background-size: cover;
+        }
+
+        #app {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .city {
+            position: absolute;
+            /* border-radius: 50%;
+            width: 5em;
+            height: 5em;
+            color:white;
+            background-color: rgb(53, 62, 114); */
+        }
+
+        #zjk {
+            top: 480px;
+            left: 720px;
+        }
+
+        #yq {
+            top: 700px;
+            left: 1010px;
+        }
+
+        #bj {
+            top: 900px;
+            left: 1200px;
+        }
+
+        #bk {
+            font-size: 40px;
+            height: 100px;
+            width: 400px;
+            top: 800px;
+            left: 2200px;
+            position: absolute;
+            box-shadow: 10px 10px rgba(58, 58, 58, 0.959);
+        }
+
+        #sk {
+            font-size: 40px;
+            height: 100px;
+            width: 400px;
+            top: 1000px;
+            left: 2190px;
+            position: absolute;
+            box-shadow: 10px 10px rgba(58, 58, 58, 0.959);
+        }
+
+        .grad {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10em;
+            height: 10em;
+        }
+
+        .inner {
+            width: 2em;
+            height: 2em;
+            border-radius: 50%;
+            background-color: #5c68a7;
+            animation: moveInner 1s infinite;
+        }
+
+        .middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 6em;
+            height: 6em;
+            border-radius: 3em;
+            background-color: rgba(80, 94, 155, 0.2);
+            animation: moveMiddle 1s infinite;
+        }
+
+        .biggest {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 10em;
+            height: 10em;
+            border-radius: 5em;
+            background-color: rgba(80, 94, 155, 0.1);
+            animation: moveBiggest 1s infinite;
+        }
+
+        .el-tooltip__popper is-dark {
+            font-size: 72px; !important
+        }               
+
+        @keyframes moveInner {
+            from {
+                width: 1em;
+                height: 1em;
+            }
+
+            to {
+                width: 2em;
+                height: 2em;
+            }
+        }
+
+        @keyframes moveMiddle {
+            from {
+                width: 2em;
+                height: 2em;
+            }
+
+            to {
+                width: 6em;
+                height: 6em;
+            }
+        }
+
+        @keyframes moveBiggest {
+            from {
+                width: 2em;
+                height: 2em;
+            }
+
+            to {
+                width: 10em;
+                height: 10em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="images">
+            <!-- <img src="images/index.jpg"/> -->
+        </div>
+        <el-tooltip class="item" effect="dark" content="张家口赛区" placement="top">
+            <div class="grad city" id="zjk" @click="jumpPath('ZhangJiaKou')">
+                <div class="biggest">
+                    <div class="middle">
+                        <div class="inner"></div>
+                    </div>
+                </div>
+            </div>
+        </el-tooltip>
+        <el-tooltip class="item" effect="dark" content="延庆赛区" placement="top">
+            <div class="grad city" id="yq" @click="jumpPath('YanQing')">
+                <div class="biggest">
+                    <div class="middle">
+                        <div class="inner"></div>
+                    </div>
+                </div>
+            </div>
+        </el-tooltip>
+        <el-tooltip class="item" effect="dark" content="北京赛区" placement="top">
+            <div class="grad city" id="bj" @click="jumpPath('BeiJing')">
+                <div class="biggest">
+                    <div class="middle">
+                        <div class="inner"></div>
+                    </div>
+                </div>
+            </div>
+        </el-tooltip>
+        <el-button round id="bk" >冬奥百科</el-button>
+        <el-button round id="sk">赛况统计</el-button>
+    </div>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            methods: {
+                jumpPath(path) {
+                    let src = window.location.href.split('index.html')[0];
+                    window.location.href = `${src}select.html?${path}`
+                }
+            }
+        })
+    </script>
+<!--
+    <script>
+        window.onload = function () {
+            var div = document.getElementById("app");
+            div.addEventListener("click", function (e) { console.log(e) })
+        }
+    </script>
+-->
+</body>
+
+</html>
