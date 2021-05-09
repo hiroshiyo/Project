@@ -1,0 +1,71 @@
+
+天气接口
+
+https://weather.cma.cn/api/weather/view?stationid=
+
+station 代表地区编号
+延庆    54406
+北京    54511
+张家口  54401
+
+格式
+{
+  "msg": "success",
+  "code": 0,
+  "data": {
+    "location": {
+      "id": "54511",
+      "name": "北京",
+      "path": "中国, 北京, 北京",
+      "longitude": 116.47,
+      "latitude": 39.8,
+      "timezone": 8
+    },
+    "daily": [
+      {
+        "date": "2021/04/20",
+        "high": 26.0,
+        "dayText": "多云",
+        "dayCode": 1,
+        "dayWindDirection": "南风",
+        "dayWindScale": "3~4级",
+        "low": 13.0,
+        "nightText": "多云",
+        "nightCode": 1,
+        "nightWindDirection": "南风",
+        "nightWindScale": "微风"
+      }
+    }
+}
+
+天气图标
+https://weather.cma.cn/static/img/w/icon/w14.png
+
+w[n].png 修改n，n为天气编号"dayCode" or "nightCode"
+
+场馆
+
+54511 "北京" 
+{
+  "1": "国家速滑馆",
+  "2": "国家体育馆",
+  "3": "国家体育场（鸟巢）",
+  "4": "国家游泳中心（水立方）",
+  "5": "首都体育馆",
+  "6": "五棵松体育中心",
+  "7": "首钢滑雪大跳台"
+}
+
+54406 "延庆"
+{
+  "1": "国家雪车雪橇中心",
+  "2": "国家高山滑雪中心",
+}
+
+54401 "张家口"
+{
+  "1": "云顶滑雪公园",
+  "2": "国家冬季两项中心",
+  "3": "国家跳台滑雪中心",
+  "4": "国家越野滑雪中心"
+}

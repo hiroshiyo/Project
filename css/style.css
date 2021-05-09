@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.column.side {
+  float: left;
+  width: 12%;
+  margin-left: 3%;
+}
+.sticky {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+}
+
+.column.right {
+  float: right;
+  width: 67%;
+  margin-right: 13%;
+}
+
+
+

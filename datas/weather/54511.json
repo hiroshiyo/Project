@@ -1,0 +1,119 @@
+{
+  "msg": "success",
+  "code": 0,
+  "data": {
+    "location": {
+      "id": "54511",
+      "name": "北京",
+      "path": "中国, 北京, 北京",
+      "longitude": 116.47,
+      "latitude": 39.8,
+      "timezone": 8
+    },
+    "daily": [
+      {
+        "date": "2021/04/20",
+        "high": 26.0,
+        "dayText": "多云",
+        "dayCode": 1,
+        "dayWindDirection": "南风",
+        "dayWindScale": "3~4级",
+        "low": 13.0,
+        "nightText": "多云",
+        "nightCode": 1,
+        "nightWindDirection": "南风",
+        "nightWindScale": "微风"
+      },
+      {
+        "date": "2021/04/21",
+        "high": 20.0,
+        "dayText": "多云",
+        "dayCode": 1,
+        "dayWindDirection": "东南风",
+        "dayWindScale": "3~4级",
+        "low": 13.0,
+        "nightText": "小雨",
+        "nightCode": 7,
+        "nightWindDirection": "东南风",
+        "nightWindScale": "微风"
+      },
+      {
+        "date": "2021/04/22",
+        "high": 18.0,
+        "dayText": "阴",
+        "dayCode": 2,
+        "dayWindDirection": "东风",
+        "dayWindScale": "微风",
+        "low": 10.0,
+        "nightText": "阴",
+        "nightCode": 2,
+        "nightWindDirection": "东风",
+        "nightWindScale": "微风"
+      },
+      {
+        "date": "2021/04/23",
+        "high": 20.0,
+        "dayText": "阴",
+        "dayCode": 2,
+        "dayWindDirection": "东风",
+        "dayWindScale": "微风",
+        "low": 10.0,
+        "nightText": "阴",
+        "nightCode": 2,
+        "nightWindDirection": "东南风",
+        "nightWindScale": "微风"
+      },
+      {
+        "date": "2021/04/24",
+        "high": 21.0,
+        "dayText": "多云",
+        "dayCode": 1,
+        "dayWindDirection": "东风",
+        "dayWindScale": "微风",
+        "low": 12.0,
+        "nightText": "多云",
+        "nightCode": 1,
+        "nightWindDirection": "东南风",
+        "nightWindScale": "微风"
+      },
+      {
+        "date": "2021/04/25",
+        "high": 20.0,
+        "dayText": "多云",
+        "dayCode": 1,
+        "dayWindDirection": "东南风",
+        "dayWindScale": "微风",
+        "low": 10.0,
+        "nightText": "多云",
+        "nightCode": 1,
+        "nightWindDirection": "南风",
+        "nightWindScale": "微风"
+      },
+      {
+        "date": "2021/04/26",
+        "high": 22.0,
+        "dayText": "多云",
+        "dayCode": 1,
+        "dayWindDirection": "南风",
+        "dayWindScale": "微风",
+        "low": 10.0,
+        "nightText": "晴",
+        "nightCode": 0,
+        "nightWindDirection": "南风",
+        "nightWindScale": "微风"
+      }
+    ],
+    "now": {
+      "precipitation": 0.0,
+      "temperature": 22.6,
+      "pressure": 1012.0,
+      "humidity": 29.0,
+      "windDirection": "西南风",
+      "windDirectionDegree": 196.0,
+      "windSpeed": 2.5,
+      "windScale": "微风"
+    },
+    "alarm": [],
+    "lastUpdate": "2021/04/20 19:20"
+  }
+}

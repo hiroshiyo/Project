@@ -1,0 +1,147 @@
+html {
+    width: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    zoom: 0.6;
+    background-size: cover;
+    position: absolute;
+    background-color: #486FBA;
+}
+
+#images {
+    width: 3095px;
+    height: 100%;
+    margin: auto;
+    position: relative;
+    background: url(images/index.jpg) no-repeat;
+    background-size: cover; 
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+}
+
+.city {
+    position: absolute;
+    cursor:pointer
+}
+
+#zjk {
+    top:550px;
+    left: 900px;
+}
+
+#yq {
+    top: 880px;
+    left: 1240px;
+}
+
+#bj {
+    top: 1100px;
+    left: 1490px;
+}
+
+#bk {
+    font-size: 40px;
+    height: 100px;
+    width: 400px;
+    top: 1050px;
+    left: 2100px;
+    position: absolute;
+    box-shadow: 10px 10px rgba(58, 58, 58, 0.959);
+}
+
+#sk {
+    font-size: 40px;
+    height: 100px;
+    width: 400px;
+    top: 1220px;
+    left: 2090px;
+    position: absolute;
+    box-shadow: 10px 10px rgba(58, 58, 58, 0.959);
+}
+
+.grad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    height: 10em;
+}
+.inner {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    background-color: #5c68a7;
+    animation: moveInner 1s infinite;
+}
+.inner:hover{
+    background-color: rgb(84, 116, 223);
+}
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6em;
+    height: 6em;
+    border-radius: 3em;
+    background-color: rgba(80, 94, 155, 0.2);
+    animation: moveMiddle 1s infinite;
+}
+
+.biggest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    height: 10em;
+    border-radius: 5em;
+    background-color: rgba(80, 94, 155, 0.1);
+    animation: moveBiggest 1s infinite;
+}
+
+.el-tooltip__popper{
+    font-size: 2em!important;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+}               
+
+@keyframes moveInner {
+    from {
+        width: 1em;
+        height: 1em;
+    }
+
+    to {
+        width: 2em;
+        height: 2em;
+    }
+}
+
+@keyframes moveMiddle {
+    from {
+        width: 2em;
+        height: 2em;
+    }
+
+    to {
+        width: 6em;
+        height: 6em;
+    }
+}
+
+@keyframes moveBiggest {
+    from {
+        width: 2em;
+        height: 2em;
+    }
+
+    to {
+        width: 10em;
+        height: 10em;
+    }
+}
